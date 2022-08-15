@@ -15,15 +15,17 @@
 """
 Translate raw text with a trained model
 """
-from .g2p import G2PPytorch
-
-MODEL_ROOT = 'g2p_seq2seq_pytorch/models'
+#from g2p_seq2seq_pytorch.g2p import G2PPytorch
+from g2p import G2PPytorch
+#from g2p_seq2seq_pytorch.transformer import transformer_g2p
+from transformer import transformer_g2p
+MODEL_ROOT = 'g2p_seq2seq_pytorch/models/20210722.pt'
 MODEL_NAME = 'checkpoint_v01.pt'
 
 
 def main() -> None:
     model = G2PPytorch()
-    model.load_model(MODEL_ROOT, MODEL_NAME)
+    model.load_model(MODEL_ROOT)
     print(model.decode_word("vijay"))
     print(model.decode_word("karthik"))
 
