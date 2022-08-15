@@ -16,6 +16,12 @@ pyenv virtualenv 3.7.8 g2p
 pyenv activate g2p
 poetry install
 ```
+This repo works also with Docker, the Docker image can be built and run as follows:
+ ```
+ cd g2p_seq2seq_pytorch/
+ docker build -t g2p:latest .
+ docker run -it --gpus all g2p:latest
+```
 
 ## Download the model
 
